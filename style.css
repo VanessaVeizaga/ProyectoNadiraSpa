@@ -83,4 +83,37 @@ header nav a {
 a:hover {
     color: rgb(131, 51, 205);
 }
+footer {
+    justify-content: left;
 
+}
+.container {
+    color: rgb(2, 2, 2);
+    font-size: 150.5%;
+    font-family: 'Lora', serif;
+}
+#info {
+    background-color: rgb(181, 137, 223);
+    font-size: 75.5%;
+    font-family: 'Lora', serif;
+}
+#datoscontacto {
+    text-align: center;
+    background-color: rgb(234, 214, 250);
+    font-size: 62.5%;
+    font-family: 'Lora', serif;
+}
+#enviar {
+    text-align: center;
+    background-color: rgb(123, 115, 123);
+    font-size: 100.5%;
+    font-family: 'Lora', serif;
+    color: aliceblue;
+}
+#containerfluid {
+    text-align: center;
+    background-color: rgba(138, 20, 138, 0.699);
+    font-size: 100.5%;
+    font-family: 'Lora', serif;
+    color: aliceblue;
+}
