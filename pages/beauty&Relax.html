@@ -46,7 +46,61 @@
 
     </main>
 
-    <footer>
+    <footer >
+        <br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                <i class="material-icons" style="font-size:30px;color:black;">Formulario de contacto</i>
+                <form action="https://formspree.io/f/xpznljvo"
+                method="POST">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name">
+                    <br>
+                    <label for="cel">N° de contacto</label>
+                    <input type="tel" name="cel" required>
+                    <br>
+                    <label> Mail:     
+                        <input type="email" name="mail">
+                    </label>
+                    <br>
+                    <label>Quiero información sobre:
+                        <select id="info">
+                            <option value="Tratamientos corporales" >Tratamientos corporales</option>
+                            <option value="Tratamientos faciales">Tratamientos faciales</option>
+                            <option value="Beauty y relax" selected>Beaty & Relax</option>
+                            <option value="Promociones" selected>Promociones y Boucher de Regalos</option>
+                        </select>
+                    <label>Deja tu consulta:
+                        <textarea name="comentario" id="" cols="30" rows="5">Estoy interesado en </textarea>
+                    </label>
+                    <br><br>
+                    <input type="submit" value="Enviar" id="enviar">
+                </form>
+                </div>
+                <div class="col-4" id="datoscontacto">
+                    <h5>Dirección: Chacabuco 275 PB</h5>
+                    <h5>Córdoba Capital</h5>
+                    <h5>Telefono: 351-6683053</h5>
+                    <h5>Instagram: <a href="https://www.instagram.com/spanadiracordoba/">SpaNadiraCordoba</a></h5>
+                    <h5>WhatsApp:<a href="https://wa.link/ceuuqi">Hace Click aca</a></h5>               
+                </div>
+                <div class="col-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.7743786428914!2d-64.18330938492346!3d-31.420341781402726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a29ae54b8263%3A0x89a6a9e11bf10e57!2sBlvr.%20Chacabuco%20275%2C%20X5000%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1665538670543!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="containerfluid">
+            <div class="row">
+                <div class="col-6">
+                    <h5><a id="quienessomos" href="quienesSomos.html">¿Quiénes somos?</a></h5>
+                </div>    
+                <div class="col-6">
+                <h5>Instagram: <a href="https://www.instagram.com/spanadiracordoba/">SpaNadiraCordoba</a></h5>
+                </div>    
+            </div>
+        </div>
 
     </footer>
 
