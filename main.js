@@ -15,9 +15,9 @@ function masajesCorporales() {
     let descripcion = document.getElementById("descripcion")
     descripcion.innerHTML = `<h5>Masajes corporales</h5>
     <ul>
-    <li>Masajes relajantes</li>
-    <li>Masajes descontracturantes</li>
-    <li>Masajes Holisticos</li>
+        <li>Masajes relajantes</li>
+        <li>Masajes descontracturantes</li>
+        <li>Masajes Holisticos</li>
     </ul>`    
 }
 
@@ -62,6 +62,22 @@ function maquillajeSocial() {
     descripcion.innerHTML = `<h5>Maquillaje social</h5>
     <p>Para el maquillaje social destacás los rasgos de la cara y tapás imperfecciones, ya que se trata de dejar a
      la persona más bella de lo que es. Se usa para 15 años, novias, madrinas</p>`
+}
+
+function platinumCard() {
+    colorTextoBotones("PLATINUM CARD")
+    let descripcion = document.getElementById("descripcion")
+    descripcion.innerHTML = `<h5>PLATINUM CARD</h5>
+    <p>Esta tarjeta comprende los siguientes tratamientos</p>
+    <ul>
+        <li>4 sesiones de masajes a elección</li>
+        <li>2 sesiones de uñas esculpidas</li>
+        <li>2 sesiones de belleza de pies y de manos</li>
+        <li>4 sesiones de ultracavitación</li>
+        <li>4 sesiones de Venus Legacy </li>
+        <li>2 sesiones de limpieza facial profunda</li>
+        <li>2 sesiones de Dermapen</li>
+    </ul>`       
 }
 
 
