@@ -1,22 +1,25 @@
-document.body.onload = function() {
-    let secciones = document.getElementsByClassName("primarios")
-    let h1 = document.getElementById("seccion")
-    for(i = 0; i < secciones.length; i++) {
-        if (secciones[i].innerHTML == h1.innerHTML) {
-            secciones[i].style.color = "rgb(141, 81, 197)"
-        } else {
-            secciones[i].style.color = "rgb(0, 0, 0)"
-        }
-    }    
-  }
+//Función para cambiar el color del texto de los items de la nav principal
 
+document.body.onload = function() {
+    let h1 = document.getElementById("seccion")
+    cambiaColorLetra("primarios", h1, "rgb(141, 81, 197)", "rgb(0, 0, 0)")
+  }
+ 
+//Función para cambiar el color del texto de los items de la nav secundaria
+  
 function colorTextoBotones(texto) {
-    let botones = document.getElementsByClassName(texto.className)
-    for(i = 0; i < botones.length; i++) {
-        if (botones[i].innerHTML == texto.innerHTML) {
-            botones[i].style.color = "rgb(141, 81, 197)"
+    cambiaColorLetra(texto.className, texto, "rgb(141, 81, 197)", "rgb(255, 255, 255)")
+}
+
+//---------------------------------------------------------------------------------------
+
+function cambiaColorLetra(claseElem1, elem2, color1, color2) {
+    let array = document.getElementsByClassName(claseElem1)
+    for(i = 0; i < array.length; i++) {
+        if (array[i].innerHTML == elem2.innerHTML) {
+            array[i].style.color = color1
         } else {
-            botones[i].style.color = "rgb(255, 255, 255)"
+            array[i].style.color = color2
         }
     }
 }
@@ -28,13 +31,17 @@ function mostrarContenido(tratamiento) {
     if (portada != null) {
         portada.remove()
     }
+    let contenedor = document.getElementById("tratamientos")
+    contenedor.style.border = "ridge 0.5em rgb(219, 179, 219)"
+    contenedor.style.boxShadow = "0.5em 0.5em 0.25em rgba(172, 164, 172, 0.699)"
     let titulo = document.getElementById("titulo")
     titulo.innerHTML = nombreTratamiento
+    let seccion = document.getElementById("seccion").innerHTML
+    console.log(seccion)
     let imagen = document.getElementById("imagen")
-    imagen.src = `../media/Beauty/${nombreTratamiento.replaceAll(" ", "_").toLowerCase()}.jpg` 
+    imagen.src = `../media/${seccion.replaceAll(" ", "_").toLowerCase()}/${nombreTratamiento.replaceAll(" ", "_").toLowerCase()}.jpg` 
     imagen.alt = nombreTratamiento
     imagen.style.border = "0.25em solid rgb(255, 255, 255)"
-    imagen.style.bordeRadius = "5%"
     let descripcion = document.getElementById("descripcion")
     if (nombreTratamiento == "Masajes corporales") {
         descripcion.innerHTML = `
@@ -57,7 +64,8 @@ function mostrarContenido(tratamiento) {
     } else if (nombreTratamiento == "Masajes faciales") {
         descripcion.innerHTML = `
         <p>El masaje facial es un tratamiento de belleza que abarca un conjunto de técnicas 
-        basadas en manipulaciones manuales sobre el cutis. Por lo general, se realizan pequeños 
+        basadas en manipulaciones manuales sobre el cutis.</p> 
+        <p>Por lo general, se realizan pequeños 
         movimientos sobre el rostro, aplicando diferentes grados de intensidad, superficial o profunda</p>`
     } else if (nombreTratamiento == "Uñas esculpidas") {
         descripcion.innerHTML = `
@@ -71,7 +79,8 @@ function mostrarContenido(tratamiento) {
     } else if (nombreTratamiento == "Belleza de manos") {
         descripcion.innerHTML = `
         <p>Un tratamiento completo para el cuidado y belleza de las manos, con el que se consigue lucir una uña arreglada, 
-        desde el limado, el arrastre de la cutícula y el maquillado. También supone una hidratación profunda de las manos 
+        desde el limado, el arrastre de la cutícula y el maquillado.</p> 
+        <p>También supone una hidratación profunda de las manos 
         que permite recuperar su frescura y suavidad.</p>`
     } else if (nombreTratamiento == "Maquillaje social") {
         descripcion.innerHTML = `
@@ -88,6 +97,91 @@ function mostrarContenido(tratamiento) {
             <li>4 sesiones de Venus Legacy </li>
             <li>2 sesiones de limpieza facial profunda</li>
             <li>2 sesiones de Dermapen</li>
-        </ul>`
-    }
+        </ul>
+        <p>La misma tiene validez de 45 días, y las sesiones deberán realizarse dentro del mes de iniciado el tratamiento.</p>`
+    } else if (nombreTratamiento == "Limpieza profunda") {
+        descripcion.innerHTML = `
+        <p>La limpieza facial profunda es un procedimiento de mantenimiento que elimina todas las impurezas que se 
+        encuentran en la piel generadas por el mismo cuerpo y por el ambiente. Estas impurezas son el origen de imperfecciones, 
+        acné, arrugas prematuras y pérdida de brillo.</p>
+        <p>Entre sus beneficios podemos observar que suaviza la piel, aumenta la luminosidad del rostro, Regula el pH de la piel. 
+        Regula la producción de grasa, Elimina y remueve las impurezas y células muertas.</p>`
+    } else if (nombreTratamiento == "Peeling") {
+        descripcion.innerHTML = `
+        <p>El peeling es un tratamiento dermatológico basado en la exfoliación de las capas más superficiales de la piel para favorecer su 
+        sustitución por otras de mejor calidad y textura. Se induce así la creación de nuevas capas de la dermis y la epidermis.</p>`
+
+    } else if (nombreTratamiento == "Despigmentante") {
+        descripcion.innerHTML = `
+        <p>Es una técnica que consiste en aplicar sobre la piel limpia y desengrasada una mascarilla especial llamada también “fórmula magistral”, 
+        para la cual se indican diferentes agentes químicos y principios activos con la finalidad de inducir la primera descamación la cual 
+        iniciará el proceso inicial de la retirada de la mancha.</p>`
+    } else if (nombreTratamiento == "Dermapen Anti-age") {
+        descripcion.innerHTML = `
+        <p>El microneedling con Dermapen es un tratamiento mínimamente invasivo cuyo objetivo es mejorar la calidad de la piel, estimulando 
+        la producción de colágeno y permitiendo que los activos penetren de una forma mucho más profunda.</p>`
+    } else if (nombreTratamiento == "Radiofrecuencia facial") {
+        descripcion.innerHTML = `
+        <p>El tratamiento de radiofrecuencia es muy sencillo, consiste en aplicar calor a la piel a través de una onda electromagnética que 
+        aumenta la temperatura a una determinada profundidad. Con ello lo que provocamos es una especie de efecto tensor o efecto lifting para 
+        estimular la producción de colágeno o el drenaje de toxinas, lo que permitirá que la piel gane firmeza. </p>`
+    } else if (nombreTratamiento == "SILVER CARD") {
+        descripcion.innerHTML = `
+        <p>Esta tarjeta abarca los siguientes tratamientos</p>
+        <ul>
+            <li>2 sesiones de tratamiento despigmentante</li>
+            <li>1 sesion de peeling</li>
+            <li>2 sesiones de Dermapen ant-iage</li>
+            <li>1 sesión de limpieza facial profunda</li>
+        </ul>
+        <p>La misma tiene una validez de 45 días, y el tratamiento deberá realizarse dentro de los 60 días desde la primera sesión.</p>`
+    } else if (nombreTratamiento == "Ultracavitación") {
+        descripcion.innerHTML = `
+        <p>La utracavitación, también conocida como liposucción sin cirugía, consiste en un tratamiento de tipo reductor indoloro de efectos 
+        inmediatos, cuyo objetivo es eliminar los depósitos de grasa presentes en el cuerpo sin la necesidad de llevar a cabo un procedimiento 
+        quirúrgico.</p> 
+        <p>Así, la ultracavitación consigue una modelación en el contorno general del cuerpo a la vez que elimina problemas como la celulitis. 
+        Se sirve de los ultrasonidos para llegar a la grasa, eliminarla y que esta posteriormente se elimine por el propio cuerpo.</p>`
+    } else if (nombreTratamiento == "Radiofrecuencia corporal") {
+        descripcion.innerHTML = `
+        <p>El tratamiento de radiofrecuencia es muy sencillo, consiste en aplicar calor a la piel a través de una onda electromagnética que aumenta 
+        la temperatura a una determinada profundidad. Con ello lo que provocamos es una especie de efecto tensor o efecto lifting para estimular la 
+        producción de colágeno o el drenaje de toxinas, lo que permitirá que la piel gane firmeza.</p> 
+        <p>La radiofrecuencia se utiliza para varios fines. Por un lado, produce la contracción de fibras de colágeno, dando lugar al deseado efecto 
+        lifting, al mismo tiempo que estimula nuevas fibras de colágeno. </p>`
+    } else if (nombreTratamiento == "Ultherapy") {
+        descripcion.innerHTML = `
+        <p>Ultherapy® utiliza una tecnología de ultrasonido el cual llega más profundo que cualquier otro tratamiento no invasivo también utilizados 
+        para la estimulación de colágeno.</p>
+        <p>Este procedimiento aprovecha los beneficios tradicionales de la imagen en tiempo real por ultrasonido, de tal forma que los especialistas que 
+        utilizan Ultherapy® puedan visualizar las capas del tejido que están tratando. Esto asegura que la energía del tratamiento se enfoque en la zona 
+        de la piel del paciente que más lo necesite y en la cuál se tendrán mayores resultados</p>`
+    } else if (nombreTratamiento == "Depilación definitiva") {
+        descripcion.innerHTML = `
+        <p>La Depilación médica se basa en tratar con una luz muy específica (producida por Láser o IPL) en una zona, con el objeto de eliminar el pelo.</p>
+        <p>Si el tratamiento es eficaz, y está realizado correctamente bajo supervisión médica, el pelo se elimina de forma permanente.</p>`
+    } else if (nombreTratamiento == "Venus Legacy") {
+        descripcion.innerHTML = `
+        <p>Venus Legacy es un aparato revolucionario que trabaja con el concepto Trim & Tite™ (reduce y reafirma).</p>
+        <p>La radiofrecuencia multipolar brinda un calor rápido, sin dolor y homogéneo a varias profundidades del tejido, estimulando la contracción del 
+        colágeno, su síntesis y la lipólisis (rotura de las grasas). Los campos magnéticos pulsados, a su vez, promueven la síntesis del colágeno, 
+        la proliferación de los fibroblastos y la neo-vascularidad (formación de nuevos vasos sanguíneos).</p> 
+        <p>Pero además, una tecnología patentada por Venus Concept (denominada Varipulse™) genera impulsos de succión ajustables que facilitan una 
+        penetración profunda de la energía, ayudan al drenaje linfático y estimulan la circulación sanguínea.</p>`
+    } else if (nombreTratamiento == "Criolipolisis") {
+        descripcion.innerHTML = `
+        <p>Es un procedimiento médico estético, no invasivo e indoloro, que sirve para destruir las células grasas exponiéndolas a bajas temperaturas 
+        mediante un proceso de succión aplicado sobre la zona afectada</p>`
+    } else if (nombreTratamiento == "GOLD CARD") {
+        descripcion.innerHTML = `
+        <p>Esta tarjeta abarca los siguientes tratamientos:</p>
+        <ul>
+            <li>4 sesiones de ultracavitación</li>
+            <li>4 sesiones  de Venus Legacy</li>
+            <li>2 sesiones de criolipolisis</li>
+            <li>2 sesiones de radiofrecuencia corporal</li>
+        </ul>
+        <p>La misma tiene validez de 45 días, y las sesiones deberán realizarse dentro del mes de iniciado el tratamiento.</p>`
+    }                    
 }   
+
