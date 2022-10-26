@@ -10,9 +10,7 @@ document.body.onload = function() {
     }    
   }
 
-
 function colorTextoBotones(texto) {
-    console.log(texto.className)
     let botones = document.getElementsByClassName(texto.className)
     for(i = 0; i < botones.length; i++) {
         if (botones[i].innerHTML == texto.innerHTML) {
