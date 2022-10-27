@@ -30,7 +30,7 @@ header {
 
 header div {
     grid-area: medio;
-    background-image: url(./media/flores_violetas.jpg);
+    background-image: url(./media/header/flores_violetas.jpg);
     overflow-y: hidden;
     height: 10em; 
 }
@@ -121,9 +121,9 @@ a:hover {
     gap: 3em;
     justify-content: space-between;
     justify-items: center;
-    width: 80%;
+    width: 90%;
     position: relative;
-    left: 10%;
+    left: 5%;
 }
 
  .servicios a { 
@@ -194,7 +194,7 @@ a:hover {
 #portada {
     position: relative;
     left: 15%;
-    top: 3em;
+    top: 1em;
     width: 70%;
 }
 
@@ -265,9 +265,9 @@ footer {
 
 }
 
-/*Diseño para móvil*/
+/*Diseño para móvil y tablet*/
 
-@media screen and (max-width:575px) {
+@media screen and (max-width:805px) {
 
     header div {
         grid-area: superior;
@@ -302,6 +302,10 @@ footer {
         justify-content: center;
         padding-top: 0.1em;
         padding-bottom: 0.1em;
+    }
+
+    h1 {
+        margin-top: 0.3em;
     }
     
     #tratamientos {
@@ -338,20 +342,28 @@ footer {
         grid-template-columns: 1fr;
         width: 96%;
         left: 2%;
+        gap: 1em;
     }
 
     .servicios a { 
         font-size: 0.75em;
-        border: ridge 1em rgb(219, 179, 219);
-        border-radius: 1em;
     }
-
 
   }
 
-/*Diseño para tablet*/
+/*Diseño exclusivos para tablet*/
 
-@media screen and (min-width:576px) and (max-width:767px) {
+@media screen and (min-width:576px) and (max-width:805px) {
 
+    #tratamientos {
+        grid-template-areas: 
+        "img titulo"
+        "img descripcion";
+        grid-template-rows: 2.5em auto;
+    }
     
+    #titulo {
+        width: 90%;
+        text-align: start;
+    }
 }
