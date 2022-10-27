@@ -185,3 +185,26 @@ function mostrarContenido(tratamiento) {
     }                    
 }   
 
+const formulario = document.getElementById('formulario')
+const Name = document.getElementById('name')
+const cel = document.getElementById('cel')
+const mail = document.getElementById('mail')
+
+formulario.addEventListener("submit", e=> {
+    e.preventDefault();
+
+    const regName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
+    const regcel = /^ [0 - 9] + $/;
+    const regmail= /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
+
+    if (!regName.test(Name.value)){
+        return console.log("Solo letras");
+    } 
+    if (!regcel.test(cel.value)){
+        return console.log("Solo numeros de telefono");
+    } 
+    if (!regmail.test(mail.value)){
+        return console.log("Formato de mail no valido");
+    } 
+} 
+)
