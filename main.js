@@ -33,7 +33,9 @@ function mostrarContenido(tratamiento) {
     }
     let contenedor = document.getElementById("tratamientos")
     contenedor.style.border = "ridge 0.5em rgb(219, 179, 219)"
+    contenedor.style.borderRadius = "1em"
     contenedor.style.boxShadow = "0.5em 0.5em 0.25em rgba(172, 164, 172, 0.699)"
+    contenedor.style.backgroundColor = "rgb(242, 206, 246)"
     let titulo = document.getElementById("titulo")
     titulo.innerHTML = nombreTratamiento
     let seccion = document.getElementById("seccion").innerHTML
