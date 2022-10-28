@@ -23,6 +23,11 @@ main {
     font-size: 0.9em;
 }
 
+.mensajeExitoso {
+    color: rgb(4, 119, 21);
+    font-size: 0.9em;
+}
+
 /*header*/
 
 header {
@@ -122,7 +127,7 @@ a:hover {
 .servicios{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: 1fr 1fr;
     gap: 3em;
     justify-content: space-between;
     justify-items: center;
@@ -133,7 +138,7 @@ a:hover {
 
  .servicios a { 
     width: 100%;
-    height: 25em;
+    height: 27em;
     border: ridge 1em rgb(219, 179, 219);
     margin: 0 0.6em;
     border-radius: 1em;
@@ -228,46 +233,92 @@ a:hover {
     text-align: center;
 }
 
+/*footer*/
+
 footer {
-    justify-content: left;
-
-}
-.container {
-    color: rgb(2, 2, 2);
-    font-size: 150.5%;
-    font-family: 'Lora', serif;
-}
-#info {
-    background-color: rgb(181, 137, 223);
-    font-size: 75.5%;
-    font-family: 'Lora', serif;
-}
-#datoscontacto {
-    text-align: center;
-    background-color: rgb(234, 214, 250);
-    font-size: 62.5%;
-    font-family: 'Lora', serif;
-}
-#enviar {
-    text-align: center;
-    background-color: rgb(123, 115, 123);
-    font-size: 100.5%;
-    font-family: 'Lora', serif;
-    color: aliceblue;
-}
-#containerfluid {
-    text-align: center;
-    background-color: rgba(138, 20, 138, 0.699);
-    font-size: 100.5%;
-    font-family: 'Lora', serif;
-    color: aliceblue;
+    display: grid;
+    grid-template-areas: 
+    "form mapa somos"
+    "form datos somos";
+    grid-template-rows: 60% 40%;
+    grid-template-columns: 28% 25% 47%;
+    gap: 1em;
+    justify-content: space-evenly;
+    justify-items: center;
+    background-color: rgb(207, 166, 226);
+    padding: 1em;
 }
 
-#texto2{
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: 400;
+#formulario {
+    grid-area: form;
+    width: 90%;
+}
 
+#datosContacto {
+    grid-area: datos;
+    position: relative;
+    top: 2em;
+    justify-self: flex-start;
+    margin-left: 1.6em;
+}
+
+#mapa {
+    grid-area: mapa;
+}
+
+#mapa iframe {
+    position: relative;
+    top: 2.2em;
+    width: 100%;
+    height: 20em;
+}
+
+#quienesSomos {
+    grid-area: somos;
+    width: 100%;
+}
+
+label {
+    font-size: 1.6em;
+}
+
+input .form-control {
+    height: 1.7em;
+}
+
+.btn-primary {
+    background-color: rgb(169, 133, 202);
+    border-color: rgb(141, 81, 197);
+    margin-top: 1em;
+}
+
+.btn-primary:hover {
+    background-color: rgb(100, 47, 150);
+}
+
+footer ul {
+    display: flex;
+    padding-left: 0;
+    justify-self: flex-start;
+}
+
+footer ul li {
+    padding-right: 1.5em;
+    padding-top: 0.3em;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+footer a img {
+    width: 2.7em;
+    margin: 0;
+    padding: 0;
+}
+
+footer p {
+    font-size: 1.7em;
+    margin-bottom: 0;
 }
 
 /*Diseño para móvil y tablet*/
@@ -352,8 +403,27 @@ footer {
 
     .servicios a { 
         font-size: 0.75em;
+        height: 35em;
+    }
+    
+    footer {
+        grid-template-areas: 
+        "form"
+        "mapa"
+        "datos"
+        "somos";
+        grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+        grid-template-columns: 1fr;
     }
 
+    #datosContacto {
+        justify-self: center;
+        text-align: center;
+    }
+
+    footer ul {
+        justify-content: center;
+    }
   }
 
 /*Diseño exclusivos para tablet*/
@@ -370,5 +440,13 @@ footer {
     #titulo {
         width: 90%;
         text-align: start;
+    }
+
+    footer {
+        grid-template-areas: 
+        "form mapa somos"
+        "form datos somos";
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 25% 25% 50%;
     }
 }

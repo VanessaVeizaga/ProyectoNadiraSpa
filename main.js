@@ -190,30 +190,30 @@ function mostrarContenido(tratamiento) {
 const formulario = document.getElementById('formulario')
 
 formulario.addEventListener("submit", e=> {
-    e.preventDefault();
-} 
-)
+    validarEmail(document.getElementsByClassName("email"))
+    if (document.querySelector("#labelEmail p") == null) {
+        e.preventDefault();
+    }
+})
 
 // Api validación correo electrónico
 
-
-
-async function validarEmail() {
-    let email = document.getElementById("mail").value
-    console.log(email);
-    const apiUrl = `https://emailvalidation.abstractapi.com/v1/?api_key=2d1caac303a24a43a833fcc46ea7b43c&email=${email}`
+async function validarEmail(correo) {
+    const apiUrl = `https://emailvalidation.abstractapi.com/v1/?api_key=2d1caac303a24a43a833fcc46ea7b43c&email=${correo.value}`
     try {
         const response = await fetch(apiUrl)
         const data = await response.json()
-        let mensaje = document.getElementById("errorEmail")
         if (data.deliverability == 'UNDELIVERABLE') {
-            mensaje.innerHTML = "*El e-mail ingresado es inexistente. Por favor, ingrese uno válido."
-        } else {
-            mensaje.innerHTML = ""
-        }
+            if (document.querySelector("#labelEmail p") == null) {
+                let mensaje = document.createElement("p")
+                mensaje.className = "mensajeError"
+                mensaje.innerHTML = "*El e-mail ingresado es inexistente. Por favor, ingrese uno válido."
+                document.getElementById("labelEmail").appendChild(mensaje)
+            }    
+        } else if (mensaje != null) {
+            mensaje.remove()
+        }  
     }
-    catch(error) {console.log("Ocurrió un error grave", error)}
+
+    catch(error) {console.log("Ocurrió un error grave", error)} 
 }
-
-
-
