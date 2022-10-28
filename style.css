@@ -18,6 +18,11 @@ main {
     margin-top: 3em;
 }
 
+.mensajeError {
+    color: rgb(255, 0, 0);
+    font-size: 0.9em;
+}
+
 /*header*/
 
 header {

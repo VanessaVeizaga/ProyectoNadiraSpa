@@ -210,3 +210,27 @@ formulario.addEventListener("submit", e=> {
     } 
 } 
 )
+
+// Api validación correo electrónico
+
+
+
+async function validarEmail() {
+    let email = document.getElementById("mail").value
+    console.log(email);
+    const apiUrl = `https://emailvalidation.abstractapi.com/v1/?api_key=2d1caac303a24a43a833fcc46ea7b43c&email=${email}`
+    try {
+        const response = await fetch(apiUrl)
+        const data = await response.json()
+        let mensaje = document.getElementById("errorEmail")
+        if (data.deliverability == 'UNDELIVERABLE') {
+            mensaje.innerHTML = "*El e-mail ingresado es inexistente. Por favor, ingrese uno válido."
+        } else {
+            mensaje.innerHTML = ""
+        }
+    }
+    catch(error) {console.log("Ocurrió un error grave", error)}
+}
+
+
+
