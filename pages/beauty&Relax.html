@@ -16,11 +16,11 @@
     <header>
         <nav>
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./faciales.html">Tratamientos faciales</a></li>
-                <li><a href="./corporales.html">Tratamientos corporales</a></li>
-                <li><a href="./beauty&Relax.html">Beauty & Relax</a></li>
-                <li><a href="./giftcard.html">Gift Card</a></li>
+                <li><a class="primarios" href="../index.html">Home</a></li>
+                <li><a class="primarios" href="./faciales.html">Tratamientos Faciales</a></li>
+                <li><a class="primarios" href="./corporales.html">Tratamientos Corporales</a></li>
+                <li><a class="primarios" href="./beauty&Relax.html">Beauty & Relax</a></li>
+                <li><a class="primarios" href="./giftcard.html">Gift Card</a></li>
                 
             </ul>
         </nav>
@@ -29,26 +29,30 @@
             <img id="logo" src="../media/logo.png" alt="Logo de Nadira Spa">
         </div>
 
-        <h1>Beauty & Relax</h1>
+        <h1 id="seccion">Beauty & Relax</h1>
 
         <nav class="navSecundaria">
             <ul>
-                <li><a class="secundarios" href="#" onclick="masajesCorporales()">Masajes corporales</a></li>
-                <li><a class="secundarios" href="#" onclick="masajesFaciales()">Masajes faciales</a></li>
-                <li><a class="secundarios" href="#" onclick="unasEsculpidas()">Uñas esculpidas</a></li>
-                <li><a class="secundarios" href="#" onclick="bellezaDePies()">Belleza de pies</a></li>
-                <li><a class="secundarios" href="#" onclick="bellezaDeManos()">Belleza de manos</a></li>
-                <li><a class="secundarios" href="#" onclick="maquillajeSocial()">Maquillaje social</a></li>
-                <li><a href="#">PLATINUM CARD</a></li>
+                <li><a class="secundarios" href="#" onclick="mostrarContenido(this)">Masajes corporales</a></li>
+                <li><a class="secundarios" href="#" onclick="mostrarContenido(this)">Masajes faciales</a></li>
+                <li><a class="secundarios" href="#" onclick="mostrarContenido(this)">Uñas esculpidas</a></li>
+                <li><a class="secundarios" href="#" onclick="mostrarContenido(this)">Belleza de pies</a></li>
+                <li><a class="secundarios" href="#" onclick="mostrarContenido(this)">Belleza de manos</a></li>
+                <li><a class="secundarios" href="#" onclick="mostrarContenido(this)">Maquillaje social</a></li>
             </ul>
         </nav>
       
     </header>
-<br><br><br><br><br>
+
     <main>
-        <section id="descripcion" class="texto"> 
-         
-         </section>
+        <div id="portada">
+            <img src="../media/portadas/portadaBeauty.jpg" alt="Mujer relajada en camilla de spa">
+        </div>
+        <section id="tratamientos">
+            <h3 id="titulo"></h3>
+            <img id="imagen"></img>
+            <div id="descripcion"></div>
+        </section>
     </main>
 
     <footer>
