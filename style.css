@@ -13,6 +13,11 @@ body {
     font-family: 'Lora', serif;
 }
 
+main {
+    margin-bottom: 5em;
+    margin-top: 3em;
+}
+
 /*header*/
 
 header div {
@@ -55,7 +60,7 @@ header nav li {
 
 header nav a {
     text-decoration: none;
-    color: rgb(70, 71, 72);
+    color: rgb(0, 0, 0);
     font-size: 1.7em;
     font-weight: 700;
 }
@@ -83,45 +88,129 @@ header nav a {
 a:hover {
     color: rgb(141, 81, 197);
 }
+
+.indexHeader div {
+    height: 25em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.indexHeader #logo {
+    height: 95%;
+}
 .servicios{
     /* display: flex;
     justify-content: center;
     position: relative;
     top: 1.2em; */
-    display: flex;
-    justify-content: center;
+    /* display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2em;
+    justify-content: space-between;
+    justify-items: center;
+    width: 80%;
     position: relative;
-    align-items: center;
-    top: 1.5em;
-
+    left: 10%;
 }
 
 
- .servicios div {
-    
-    height: 200px;
-    width: 400px;
-    border: 0.1em solid rgb(215, 148, 215) ;
+ .servicios div { 
+    width: 100%;
+    height: 25em;
+    border: ridge 0.5em rgb(219, 179, 219);
     margin: 0 0.6em;
-    background-color: rgb(215, 148, 215);
+    /* background-color: rgb(215, 148, 215); */
     border-radius: 5px;
     
 }
 
 .servicios a{
-    font-size: 2em;
+    font-size: 3em;
     font-weight: 600;
-    color: aliceblue;
-    text-align: center;
+    padding: 0.3em;
+    color: rgb(79, 67, 82);
+    text-shadow: 0.1em 0.1em rgb(238, 180, 230);
     text-decoration: none;
 }
 
-.texto{
-    font-size: 1.3em;
+#homeFaciales {
+    background-image: url(./media/portadas/portadaFaciales.jpg);
+    background-size: cover;
+    background-position: 30%;
+}
+
+#homeCorporales {
+    background-image: url(./media/portadas/portadaCorporales.jpg);
+    background-size: cover;
+}
+
+#homeBeauty {
+    background-image: url(./media/portadas/portadaBeauty.jpg);
+    background-size: cover;
+}
+
+#homeGiftCard {
+    background-image: url(./media/portadas/giftCard.jpg);
+    background-size: cover;
+}
+
+#tratamientos {
+    display: grid;
+    grid-template-areas: 
+    "img titulo"
+    "img descripcion";
+    grid-template-rows: 2.5em auto;
+    row-gap: 0.7em;
+    margin-top: 3em;
+    padding: 2em;
+    position: relative;
+    left: 18%;
+    width: 64%;
+    justify-items: center;
+    font-size: 1.6em;
     font-weight: 400;
     text-align: justify;
 }
 
+#titulo {
+    grid-area: titulo;
+    width: 90%;
+    justify-items: flex-start;
+}
+
+#portada {
+    position: relative;
+    left: 15%;
+    top: 3em;
+    width: 70%;
+}
+
+#portada img{
+    width: 100%;
+    border-radius: 3%;
+}
+
+#imagen {
+    grid-area: img;
+    width: 22em;
+}
+
+#descripcion {
+    grid-area: descripcion;
+    width: 90%;
+    text-align: start;
+}
+
+.subtitulo {
+    font-size: 1.1em;
+    font-weight: 500;
+}
 
 #texto1{
     text-align: center;
