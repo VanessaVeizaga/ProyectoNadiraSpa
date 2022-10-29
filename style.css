@@ -125,6 +125,29 @@ a:hover {
     height: 95%;
 }
 .servicios{
+    /* display: flex;
+    justify-content: center;
+    position: relative;
+    top: 1.2em; */
+    /* display: flex;
+    justify-content: space-evenly;
+    justify-items: center;
+    align-items: center; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 2em;
+    justify-content: space-between;
+    justify-items: center;
+    width: 80%;
+    position: relative;
+    left: 10%;
+}
+
+.indexHeader #logo {
+    height: 95%;
+}
+.servicios{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -450,3 +473,4 @@ footer p {
         grid-template-columns: 25% 25% 50%;
     }
 }
+
