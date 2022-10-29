@@ -18,10 +18,29 @@ main {
     margin-top: 3em;
 }
 
+.mensajeError {
+    color: rgb(255, 0, 0);
+    font-size: 0.9em;
+}
+
+.mensajeExitoso {
+    color: rgb(4, 119, 21);
+    font-size: 0.9em;
+}
+
 /*header*/
 
+header {
+    display: grid;
+    grid-template-areas:
+    "superior"
+    "medio"
+    "inferior";
+}
+
 header div {
-    background-image: url(./media/flores_violetas.jpg);
+    grid-area: medio;
+    background-image: url(./media/header/flores_violetas.jpg);
     overflow-y: hidden;
     height: 10em; 
 }
@@ -32,10 +51,12 @@ header div {
 }
 
 h1 {
+    grid-area: inferior;
     text-align: center;
     margin-bottom: 0;
-    margin-top: 0.2em;
+    margin-top: 0.5em;
     align-self: center ;
+    background-color: rgb(242, 206, 246);
 }
 
 header nav {
@@ -63,6 +84,10 @@ header nav a {
     color: rgb(0, 0, 0);
     font-size: 1.7em;
     font-weight: 700;
+}
+
+.navPrincipal {
+    grid-area: superior;
 }
 
 .navSecundaria {
@@ -119,45 +144,61 @@ a:hover {
     left: 10%;
 }
 
-
- .servicios div { 
-    width: 100%;
-    height: 25em;
-    border: ridge 0.5em rgb(219, 179, 219);
-    margin: 0 0.6em;
-    /* background-color: rgb(215, 148, 215); */
-    border-radius: 5px;
-    
+.indexHeader #logo {
+    height: 95%;
+}
+.servicios{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 3em;
+    justify-content: space-between;
+    justify-items: center;
+    width: 90%;
+    position: relative;
+    left: 5%;
 }
 
-.servicios a{
+ .servicios a { 
+    width: 100%;
+    height: 27em;
+    border: ridge 1em rgb(219, 179, 219);
+    margin: 0 0.6em;
+    border-radius: 1em;
+    text-decoration: none;
+}
+
+.servicios a:hover {
+    width: 104%;
+    height: 26em;
+    box-shadow: 0.7em 0.7em 0.25em rgba(172, 164, 172, 0.699);
+}
+
+.servicios div{
     font-size: 3em;
     font-weight: 600;
-    padding: 0.3em;
+    padding: 0.1em;
     color: rgb(79, 67, 82);
     text-shadow: 0.1em 0.1em rgb(238, 180, 230);
-    text-decoration: none;
+    background-size: cover;
+    height: 100%;
 }
 
 #homeFaciales {
     background-image: url(./media/portadas/portadaFaciales.jpg);
-    background-size: cover;
-    background-position: 30%;
+    background-position: 30%;  
 }
 
 #homeCorporales {
     background-image: url(./media/portadas/portadaCorporales.jpg);
-    background-size: cover;
 }
 
 #homeBeauty {
     background-image: url(./media/portadas/portadaBeauty.jpg);
-    background-size: cover;
 }
 
 #homeGiftCard {
     background-image: url(./media/portadas/giftCard.jpg);
-    background-size: cover;
 }
 
 #tratamientos {
@@ -167,7 +208,7 @@ a:hover {
     "img descripcion";
     grid-template-rows: 2.5em auto;
     row-gap: 0.7em;
-    margin-top: 3em;
+    margin-top: 2.5em;
     padding: 2em;
     position: relative;
     left: 18%;
@@ -175,7 +216,6 @@ a:hover {
     justify-items: center;
     font-size: 1.6em;
     font-weight: 400;
-    text-align: justify;
 }
 
 #titulo {
@@ -187,7 +227,7 @@ a:hover {
 #portada {
     position: relative;
     left: 15%;
-    top: 3em;
+    top: 1em;
     width: 70%;
 }
 
@@ -198,7 +238,7 @@ a:hover {
 
 #imagen {
     grid-area: img;
-    width: 22em;
+    width: 100%;
 }
 
 #descripcion {
@@ -216,44 +256,221 @@ a:hover {
     text-align: center;
 }
 
+/*footer*/
+
 footer {
-    justify-content: left;
-
-}
-.container {
-    color: rgb(2, 2, 2);
-    font-size: 150.5%;
-    font-family: 'Lora', serif;
-}
-#info {
-    background-color: rgb(181, 137, 223);
-    font-size: 75.5%;
-    font-family: 'Lora', serif;
-}
-#datoscontacto {
-    text-align: center;
-    background-color: rgb(234, 214, 250);
-    font-size: 62.5%;
-    font-family: 'Lora', serif;
-}
-#enviar {
-    text-align: center;
-    background-color: rgb(123, 115, 123);
-    font-size: 100.5%;
-    font-family: 'Lora', serif;
-    color: aliceblue;
-}
-#containerfluid {
-    text-align: center;
-    background-color: rgba(138, 20, 138, 0.699);
-    font-size: 100.5%;
-    font-family: 'Lora', serif;
-    color: aliceblue;
+    display: grid;
+    grid-template-areas: 
+    "form mapa somos"
+    "form datos somos";
+    grid-template-rows: 60% 40%;
+    grid-template-columns: 28% 25% 47%;
+    gap: 1em;
+    justify-content: space-evenly;
+    justify-items: center;
+    background-color: rgb(207, 166, 226);
+    padding: 1em;
 }
 
-#texto2{
-    text-align: center;
-    font-size: 2.5em;
-    font-weight: 400;
-
+#formulario {
+    grid-area: form;
+    width: 90%;
 }
+
+#datosContacto {
+    grid-area: datos;
+    position: relative;
+    top: 2em;
+    justify-self: flex-start;
+    margin-left: 1.6em;
+}
+
+#mapa {
+    grid-area: mapa;
+}
+
+#mapa iframe {
+    position: relative;
+    top: 2.2em;
+    width: 100%;
+    height: 20em;
+}
+
+#quienesSomos {
+    grid-area: somos;
+    width: 100%;
+}
+
+label {
+    font-size: 1.6em;
+}
+
+input .form-control {
+    height: 1.7em;
+}
+
+.btn-primary {
+    background-color: rgb(169, 133, 202);
+    border-color: rgb(141, 81, 197);
+    margin-top: 1em;
+}
+
+.btn-primary:hover {
+    background-color: rgb(100, 47, 150);
+}
+
+footer ul {
+    display: flex;
+    padding-left: 0;
+    justify-self: flex-start;
+}
+
+footer ul li {
+    padding-right: 1.5em;
+    padding-top: 0.3em;
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+}
+
+footer a img {
+    width: 2.7em;
+    margin: 0;
+    padding: 0;
+}
+
+footer p {
+    font-size: 1.7em;
+    margin-bottom: 0;
+}
+
+/*Diseño para móvil y tablet*/
+
+@media screen and (max-width:805px) {
+
+    header div {
+        grid-area: superior;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0.1em;
+        height: 15em;
+    }
+
+    .navPrincipal {
+        grid-area: medio;
+        justify-content: center;
+    }
+
+    .navSecundaria ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .navSecundaria li {
+        margin: 0.3em;
+       
+    }
+    
+    .navPrincipal ul {
+        flex-direction: column;
+    }
+
+    header nav li {
+        display: flex;
+        justify-content: center;
+        padding-top: 0.1em;
+        padding-bottom: 0.1em;
+    }
+
+    h1 {
+        margin-top: 0.3em;
+    }
+    
+    #tratamientos {
+        display: grid;
+        grid-template-areas: 
+        "titulo"
+        "img"
+        "descripcion";
+        grid-template-rows: 2.5em auto auto;
+        width: 90%;
+        left: 5%;
+        padding: 0.75em;
+    }
+
+    #titulo {
+        width: 100%;
+        text-align: center;
+    }
+
+    #portada {
+        width: 90%;
+        overflow: hidden;
+        left: 5%;
+        top: 1em;
+    }
+
+    #portada img{
+        width: 150%;
+        position: relative;
+        right: 25%;
+    }
+
+    .servicios{
+        grid-template-columns: 1fr;
+        width: 96%;
+        left: 2%;
+        gap: 1em;
+    }
+
+    .servicios a { 
+        font-size: 0.75em;
+        height: 35em;
+    }
+    
+    footer {
+        grid-template-areas: 
+        "form"
+        "mapa"
+        "datos"
+        "somos";
+        grid-template-rows: 1fr 0.5fr 0.5fr 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    #datosContacto {
+        justify-self: center;
+        text-align: center;
+    }
+
+    footer ul {
+        justify-content: center;
+    }
+  }
+
+/*Diseño exclusivos para tablet*/
+
+@media screen and (min-width:576px) and (max-width:805px) {
+
+    #tratamientos {
+        grid-template-areas: 
+        "img titulo"
+        "img descripcion";
+        grid-template-rows: 2.5em auto;
+    }
+    
+    #titulo {
+        width: 90%;
+        text-align: start;
+    }
+
+    footer {
+        grid-template-areas: 
+        "form mapa somos"
+        "form datos somos";
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 25% 25% 50%;
+    }
+}
+

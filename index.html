@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="./style.css">
+    <title>Home</title>
+</head>
+<body>
+    <header class="indexHeader">
+        <div>
+            <img id="logo" src="./media/header/logo.png" alt="Logo de Nadira Spa">
+        </div>
+        <h1 id="seccion">Nuestros servicios</h1>
+    </header>
+
+    <main>
+        <nav class="servicios">
+            
+                <a href="./pages/faciales.html#seccion">
+                    <div id="homeFaciales">Tratamientos Faciales</div>
+                </a>    
+         
+                <a href="./pages/corporales.html#seccion">
+                    <div id="homeCorporales">Tratamientos Corporales</div>
+                </a>
+          
+            
+                <a href="./pages/beauty&Relax.html#seccion">
+                    <div id="homeBeauty">Beauty & Relax</div>
+                </a>
+            
+            
+                <a href="./pages/giftcard.html#seccion">
+                    <div id="homeGiftCard">Gift Card</div>
+                </a>
+            </div>   
+        </nav> 
+    </main>
+
+    <footer>
+        <form id="formulario" action="https://formspree.io/f/xrgdyrqa" method="POST">
+            <h5>Formulario de contacto</h5>
+            <div class="form-group">
+                <label for="formGroupExampleInput">Nombre y apellido:</label>
+                <input type="text" class="form-control" name="nombre" id="formGroupExampleInput" maxlength="30" required> 
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">E-mail:</label>
+                <input type="email" class="form-control" name="e-mail" id="exampleFormControlInput1" placeholder="name@example.com" maxlength="50" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1" id="labelEmail">Teléfono:</label>
+                <input type="number" class="form-control" name="telefono" id="exampleFormControlInput1" class="email" maxlength="20" required>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlSelect1">Quiero información sobre:</label>
+                <select class="form-control" id="exampleFormControlSelect1" name="info_sobre">
+                    <option value="Tratamientos corporales" >Tratamientos corporales</option>
+                    <option value="Tratamientos faciales">Tratamientos faciales</option>
+                    <option value="Beauty y relax" selected>Beauty & Relax</option>
+                    <option value="Promociones" selected>Promociones y vouchers de regalos</option>
+                </select>
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlTextarea1">Comentario o consulta:</label>
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="256" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Enviar</button>
+          </form>
+
+        <div id="datosContacto">
+            <P>Dirección: Chacabuco 275 PB<br>Córdoba Capital<br>Teléfono: 351-6683053</p>
+            <ul>
+                <li>
+                    <a href="https://www.instagram.com/spanadiracordoba/">
+                        <img src="./media/footer/logotipo-de-instagram.png" alt="logo de instagram">
+                    </a>
+                </li>
+                <li>
+                    <a href="https://wa.link/ceuuqi">
+                        <img src="./media/footer/whatsapp (1).png" alt="logo de whatsapp">
+                    </a>
+                </li>
+            </ul>                        
+        </div>
+
+        <div id="mapa">
+            <h5>Nos podés encontrar en:</h5>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.7743786428914!2d-64.18330938492346!3d-31.420341781402726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a29ae54b8263%3A0x89a6a9e11bf10e57!2sBlvr.%20Chacabuco%20275%2C%20X5000%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1665538670543!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+        <div id="quienesSomos">
+            <h5>¿Quiénes somos?</h5>   
+        </div>
+
+
+    </footer>
+
+    <!-- <footer>
+        <br><br>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                <i class="material-icons" style="font-size:30px;color:black;">Formulario de contacto</i>
+             
+                <form id="formulario" action="https://formspree.io/f/xrgdyrqa" method="POST">     
+                    <label>Nombre:
+                        <input type="text" id="Name" name="name" required>
+                    </label>
+                    <br>
+                    <label>N° de contacto
+                        <input type="number" id="cel"name="cel" required>
+                    </label>
+                    <br>
+                    <label id="labelEmail"> E-mail:     
+                        <input type="email" id="email"name="email" required> <span><button type="button">Validar</button></span>
+                    </label>
+                    <br>
+                    <label>Quiero información sobre:
+                        <select id="info" name="interesado en">
+                            <option value="Tratamientos corporales" >Tratamientos corporales</option>
+                            <option value="Tratamientos faciales">Tratamientos faciales</option>
+                            <option value="Beauty y relax" selected>Beaty & Relax</option>
+                            <option value="Promociones" selected>Promociones y Boucher de Regalos</option>
+                        </select>
+                    <label>Dejá tu consulta:
+                        <textarea name="comentario" id="" cols="30" rows="5">Estoy interesado en </textarea>
+                    </label>
+                    <br><br>
+                    <input type="submit" value="Enviar" id="enviar">
+                </form>
+                </div>
+                <div class="col-4" id="datoscontacto">
+                    <h5>Dirección: Chacabuco 275 PB</h5>
+                    <h5>Córdoba Capital</h5>
+                    <h5>Telefono: 351-6683053</h5>
+                    <h5>Instagram: <a href="https://www.instagram.com/spanadiracordoba/">SpaNadiraCordoba</a></h5>
+                    <h5>WhatsApp:<a href="https://wa.link/ceuuqi">Hace Click aca</a></h5>               
+                </div>
+                <div class="col-4">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3404.7743786428914!2d-64.18330938492346!3d-31.420341781402726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9432a29ae54b8263%3A0x89a6a9e11bf10e57!2sBlvr.%20Chacabuco%20275%2C%20X5000%20C%C3%B3rdoba!5e0!3m2!1ses!2sar!4v1665538670543!5m2!1ses!2sar" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div id="containerfluid">
+            <div class="row">
+                <div class="col-6">
+                    <h5><a id="quienessomos" href="./pages/quienesSomos.html#seccion">¿Quiénes somos?</a></h5>
+                </div>    
+                <div class="col-6">
+                <h5>Instagram: <a href="https://www.instagram.com/spanadiracordoba/">SpaNadiraCordoba</a></h5>
+                </div>    
+            </div>
+        </div>
+
+
+    </footer> -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+</body>
+</html>

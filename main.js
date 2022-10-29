@@ -33,7 +33,9 @@ function mostrarContenido(tratamiento) {
     }
     let contenedor = document.getElementById("tratamientos")
     contenedor.style.border = "ridge 0.5em rgb(219, 179, 219)"
+    contenedor.style.borderRadius = "1em"
     contenedor.style.boxShadow = "0.5em 0.5em 0.25em rgba(172, 164, 172, 0.699)"
+    contenedor.style.backgroundColor = "rgb(242, 206, 246)"
     let titulo = document.getElementById("titulo")
     titulo.innerHTML = nombreTratamiento
     let seccion = document.getElementById("seccion").innerHTML
@@ -186,25 +188,32 @@ function mostrarContenido(tratamiento) {
 }   
 
 const formulario = document.getElementById('formulario')
-const Name = document.getElementById('name')
-const cel = document.getElementById('cel')
-const mail = document.getElementById('mail')
 
 formulario.addEventListener("submit", e=> {
-    e.preventDefault();
+    validarEmail(document.getElementsByClassName("email"))
+    if (document.querySelector("#labelEmail p") == null) {
+        e.preventDefault();
+    }
+})
 
-    const regName = /^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$/;
-    const regcel = /^ [0 - 9] + $/;
-    const regmail= /^[a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,15})$/;
+// Api validación correo electrónico
 
-    if (!regName.test(Name.value)){
-        return console.log("Solo letras");
-    } 
-    if (!regcel.test(cel.value)){
-        return console.log("Solo numeros de telefono");
-    } 
-    if (!regmail.test(mail.value)){
-        return console.log("Formato de mail no valido");
-    } 
-} 
-)
+async function validarEmail(correo) {
+    const apiUrl = `https://emailvalidation.abstractapi.com/v1/?api_key=2d1caac303a24a43a833fcc46ea7b43c&email=${correo.value}`
+    try {
+        const response = await fetch(apiUrl)
+        const data = await response.json()
+        if (data.deliverability == 'UNDELIVERABLE') {
+            if (document.querySelector("#labelEmail p") == null) {
+                let mensaje = document.createElement("p")
+                mensaje.className = "mensajeError"
+                mensaje.innerHTML = "*El e-mail ingresado es inexistente. Por favor, ingrese uno válido."
+                document.getElementById("labelEmail").appendChild(mensaje)
+            }    
+        } else if (mensaje != null) {
+            mensaje.remove()
+        }  
+    }
+
+    catch(error) {console.log("Ocurrió un error grave", error)} 
+}
