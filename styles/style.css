@@ -163,11 +163,11 @@ a:hover {
     text-shadow: 0.1em 0.1em rgb(238, 180, 230);
     background-size: cover;
     height: 100%;
+    background-position: 40%;
 }
 
 #homeFaciales {
     background-image: url(../media/portadas/portadaFaciales.jpg);
-    background-position: 30%;  
 }
 
 #homeCorporales {
@@ -246,7 +246,7 @@ footer {
     grid-template-areas: 
     "form mapa somos"
     "form datos somos";
-    grid-template-rows: 60% auto;
+    grid-template-rows: 55% auto;
     grid-template-columns: 26% 23% 51%;
     gap: 1em;
     justify-content: space-evenly;
@@ -316,7 +316,7 @@ input .form-control {
 #datosContacto ul {
     display: flex;
     padding-left: 0;
-    justify-self: flex-start;
+    justify-content: center;
 }
 
 #datosContacto ul li {
@@ -343,7 +343,8 @@ input .form-control {
     "tit tit"
     "div art";
     grid-template-rows: 5em auto;
-    grid-template-columns: 40% auto;
+    grid-template-columns: auto auto;
+    column-gap: 1em;
 }
 
 #quienesSomos h5 {
@@ -353,8 +354,8 @@ input .form-control {
 
 #quienesSomos div {
     grid-area: div;
-    width: 21.5em;
-    height: 35em;
+    width: 24.6em;
+    height: 40em;
     background-image: url(../media/footer/juanaMolina.jpg);
     background-size: cover;
     border: 0.5em solid rgb(252, 252, 252);
@@ -511,7 +512,7 @@ input .form-control {
         "somos";
         grid-template-rows: auto auto auto auto;
         grid-template-columns: 1fr;
-        row-gap: 2.5em;
+        row-gap: 1.75em;
     }
 
     footer ul {
