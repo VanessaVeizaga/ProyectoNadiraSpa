@@ -23,6 +23,11 @@ main {
     font-size: 0.9em;
 }
 
+.mensajeExitoso {
+    color: rgb(5, 107, 48);
+    font-size: 0.9em;
+}
+
 /*header*/
 
 header {
@@ -280,6 +285,11 @@ input .form-control {
     background-color: rgb(100, 47, 150);
 }
 
+#botonValidar {
+    margin-top: 0.4em;
+    padding: 0.3em;
+}
+
 /*footer datos de contacro*/
 
 #mapa {
@@ -299,8 +309,8 @@ input .form-control {
     width: 90%;
     position: relative;
     top: 2em;
-    justify-self: flex-start;
-    margin-left: 1.6em;
+    justify-self: center;
+    text-align: center;
 }
 
 #datosContacto ul {
@@ -407,7 +417,7 @@ input .form-control {
     }
 
     header nav a {
-        font-size: 2.2em; 
+        font-size: 2em; 
     }
 
     .navPrincipal {
@@ -425,7 +435,7 @@ input .form-control {
     }
 
     .navSecundaria a {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .navPrincipal ul {
@@ -433,6 +443,7 @@ input .form-control {
     }
 
     h1 {
+        font-size: 3.2em;
         margin-top: 0.3em;
     }
 
@@ -446,7 +457,7 @@ input .form-control {
     }
 
     .servicios div {
-        font-size: 4em;
+        font-size: 3.8em;
     }
 
     .servicios a { 
@@ -501,11 +512,6 @@ input .form-control {
         grid-template-rows: auto auto auto auto;
         grid-template-columns: 1fr;
         row-gap: 2.5em;
-    }
-
-    #datosContacto {
-        justify-self: center;
-        text-align: center;
     }
 
     footer ul {

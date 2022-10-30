@@ -55,18 +55,19 @@
     </main>
 
     <footer>
-        <form id="formulario" action="https://formspree.io/f/xrgdyrqa" method="POST">
+        <form id="formulario" action="https://formspree.io/f/mbjbzwnj" method="POST">
             <h5>Formulario de contacto</h5>
             <div class="form-group">
                 <label for="formGroupExampleInput">Nombre y apellido:</label>
                 <input type="text" class="form-control" name="nombre" id="formGroupExampleInput" maxlength="30" required> 
             </div>
-            <div class="form-group">
-                <label for="exampleFormControlInput1">E-mail:</label>
+            <div class="form-group" id="correo">
+                <label for="exampleFormControlInput1" id="labelEmail">E-mail:</label>
                 <input type="email" class="form-control" name="e-mail" id="email" placeholder="name@example.com" maxlength="50" required>
+                <button class="btn btn-primary" id="botonValidar" type="button" onclick="validarEmail()" required>Validar e-mail</button>
             </div>
             <div class="form-group">
-                <label for="exampleFormControlInput1" id="labelEmail">Teléfono:</label>
+                <label for="exampleFormControlInput1">Teléfono:</label>
                 <input type="number" class="form-control" name="telefono" id="exampleFormControlInput1" class="email" maxlength="20" required>
             </div>
             <div class="form-group">
@@ -82,7 +83,7 @@
               <label for="exampleFormControlTextarea1">Comentario o consulta:</label>
               <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="256" required></textarea>
             </div>
-            <button class="btn btn-primary" type="submit">Enviar</button>
+            <button class="btn btn-primary" type="submit" onclick="validarForm()">Enviar</button>
         </form>
         <section id="datosContacto">
             <p>Dirección: Chacabuco 275 PB<br>Córdoba Capital<br>Teléfono: 351-6683053</p>

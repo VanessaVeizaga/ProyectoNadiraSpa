@@ -1,9 +1,10 @@
 //Función para cambiar el color del texto de los items de la nav principal
 
 document.body.onload = function() {
+
     let h1 = document.getElementById("seccion")
     cambiaColorLetra("primarios", h1, "rgb(141, 81, 197)", "rgb(0, 0, 0)")
-  }
+}
  
 //Función para cambiar el color del texto de los items de la nav secundaria
   
@@ -11,7 +12,6 @@ function colorTextoBotones(texto) {
     cambiaColorLetra(texto.className, texto, "rgb(141, 81, 197)", "rgb(255, 255, 255)")
 }
 
-//---------------------------------------------------------------------------------------
 
 function cambiaColorLetra(claseElem1, elem2, color1, color2) {
     let array = document.getElementsByClassName(claseElem1)
@@ -39,7 +39,6 @@ function mostrarContenido(tratamiento) {
     let titulo = document.getElementById("titulo")
     titulo.innerHTML = nombreTratamiento
     let seccion = document.getElementById("seccion").innerHTML
-    console.log(seccion)
     let imagen = document.getElementById("imagen")
     imagen.src = `../media/${seccion.replaceAll(" ", "_").toLowerCase()}/${nombreTratamiento.replaceAll(" ", "_").toLowerCase()}.jpg` 
     imagen.alt = nombreTratamiento
@@ -187,41 +186,64 @@ function mostrarContenido(tratamiento) {
     }                    
 }   
 
-//Validación de formulario antes de enviar datos
 
-const formulario = document.getElementById('formulario')
+var emailValido = false
 
-formulario.addEventListener("submit", e=> {
-    let email = document.getElementById("email")
-    validarEmail(email.value)
-    if (document.querySelector("#labelEmail p") == null) {
-        e.preventDefault();
-    }
-})
+function validarEmail() {
+    emailValido = false
+    console.log(emailValido);
+    validarConApi() 
+    console.log(emailValido);
+}
 
 // Api validación correo electrónico
 
-async function validarEmail(correo) {
-    const apiUrl = `https://emailvalidation.abstractapi.com/v1/?api_key=2d1caac303a24a43a833fcc46ea7b43c&email=${correo}`
+async function validarConApi() {
+    let correo = document.getElementById("email").value
+    const apiUrl = `https://emailvalidation.abstractapi.com/v1/?api_key=bb20b9d5248d4a97b28d9de07a4de656&email=${correo}`
     try {
         const response = await fetch(apiUrl)
         const data = await response.json()
-        let mensaje = null
+        console.log(data.deliverability);
+        console.log(document.querySelector("#labelEmail p"));
         if (data.deliverability == 'UNDELIVERABLE') {
             if (document.querySelector("#labelEmail p") == null) {
-                mensaje = document.createElement("p")
+                let mensaje = document.createElement("p")
                 mensaje.className = "mensajeError"
                 mensaje.innerHTML = "*El e-mail ingresado es inexistente. Por favor, ingrese uno válido."
                 document.getElementById("labelEmail").appendChild(mensaje)
-            }    
-        } else if (mensaje != null) {
-            mensaje.remove()
-        }  
+                emailValido = false
+            } else {
+                document.querySelector("#labelEmail p").innerHTML = "*El e-mail ingresado es inexistente. Por favor, ingrese uno válido."
+                document.querySelector("#labelEmail p").className = "mensajeError"
+                emailValido = false
+            }   
+        } else if (document.querySelector("#labelEmail p") == null) {
+            let mensaje = document.createElement("p")
+            mensaje.className = "mensajeExitoso"
+            mensaje.innerHTML = "*E-mail válido"
+            document.getElementById("labelEmail").appendChild(mensaje)
+            emailValido = true
+        } else {
+            document.querySelector("#labelEmail p").innerHTML = "*E-mail válido"
+            document.querySelector("#labelEmail p").className = "mensajeExitoso"
+            emailValido = true
+        }   
     }
     catch(error) {console.log("Ocurrió un error grave", error)} 
 }
 
-document.body.onload = function() {
-    let form = document.getElementById("formulario")
-    form.reset()
-}    
+//Validación de formulario antes de enviar datos
+
+function validarForm() {
+    let formulario = document.getElementById('formulario')
+    formulario.addEventListener("submit", e=> {   
+        if (emailValido == false) {
+            alert("Por favor, valide su email para continuar con el envío de su formulario.")
+            e.preventDefault()
+        } else {
+            formulario.reset()
+        }
+    })
+
+}
