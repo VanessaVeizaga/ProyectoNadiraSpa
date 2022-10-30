@@ -42,7 +42,7 @@ header div {
     grid-area: medio;
     background-image: url(../media/header/flores_violetas.jpg);
     overflow-y: hidden;
-    height: 10em; 
+    height: 12em; 
 }
 
 #logo {
@@ -163,7 +163,7 @@ a:hover {
     text-shadow: 0.1em 0.1em rgb(238, 180, 230);
     background-size: cover;
     height: 100%;
-    background-position: 40%;
+    background-position: center;
 }
 
 #homeFaciales {
@@ -253,6 +253,10 @@ footer {
     justify-items: center;
     background-color: rgb(207, 166, 226);
     padding: 1.5em;
+}
+
+footer h5 {
+    font-size: 2.5em;
 }
 
 footer p {
