@@ -239,7 +239,7 @@ function validarForm() {
     let formulario = document.getElementById('formulario')
     formulario.addEventListener("submit", e=> {   
         if (emailValido == false) {
-            alert("Por favor, valide su email para continuar con el envío de su formulario.")
+            alert("Por favor, valide su e-mail para continuar con el envío de su formulario.")
             e.preventDefault()
         } else {
             formulario.reset()

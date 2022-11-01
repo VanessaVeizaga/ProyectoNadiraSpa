@@ -190,6 +190,7 @@ a:hover {
     "img titulo"
     "img descripcion";
     grid-template-rows: 2.5em auto;
+    grid-template-columns: 42% auto;
     row-gap: 0.7em;
     margin-top: 2.5em;
     padding: 2em;
@@ -256,7 +257,7 @@ footer {
 }
 
 footer h5 {
-    font-size: 2.5em;
+    font-size: 2.3em;
 }
 
 footer p {
@@ -483,6 +484,7 @@ input .form-control {
         "img"
         "descripcion";
         grid-template-rows: 2.5em auto auto;
+        grid-template-columns: 1fr;
         width: 90%;
         left: 5%;
         padding: 0.75em;
@@ -572,6 +574,8 @@ input .form-control {
         "img titulo"
         "img descripcion";
         grid-template-rows: 2.5em auto;
+        grid-template-columns: 42% auto;
+        padding: 1.5em;
     }
     
     #titulo {
